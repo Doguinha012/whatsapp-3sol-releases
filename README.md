@@ -2,11 +2,11 @@
 
 <img src="assets/logo.gif" alt="WhatsApp 3 Sol Logo" width="128" />
 
-# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.5
+# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.6
 
 **Aplicativo desktop multi-contas para Windows baseado no WhatsApp Web, com sessões isoladas, privacidade granular, fixação ilimitada de conversas, transcrição 100% offline, equalizador e efeitos de voz ao vivo.**
 
-[![Version](https://img.shields.io/badge/versão-3.5.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
+[![Version](https://img.shields.io/badge/versão-3.6.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
 [![Platform](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows)](#)
 [![Clematis](https://img.shields.io/badge/Clematis_Player-GitHub-6366f1?style=for-the-badge)](https://github.com/Doguinha012/Clematis-Player)
 
@@ -14,7 +14,15 @@
 
 ---
 
-## 🔥 Novidades & Melhorias da Versão 3.5 (`v3.5.0`)
+## 🛠️ Correção da Versão 3.6 (`v3.6.0`)
+
+- **🖼️ Correção do Carregamento de Figurinhas nos Chats:**
+  - Corrigida a rotina `triggerAvatarAndImageRecovery()` ao focar/redimensionar/restaurar a janela para **nunca resetar URLs `blob:`** nem imagens/figurinhas em carregamento dentro dos chats (`#main [data-testid="msg-container"]`).
+  - Removidas flags restritivas de GPU/cache/processos (`enable-zero-copy`, `renderer-process-limit=4` e limite de cache de 50 MB -> 256 MB) que podiam descartar bitmaps WebP e caches do Service Worker, alinhando o `User-Agent` ao motor Chromium nativo com preconnect em `mmg.whatsapp.net`.
+
+---
+
+## 🔥 Novidades Anteriores (v3.5) (`v3.5.0`)
 
 - **☀️ Evento Bad Sun Aprimorado (Flicker Suave, Áudios Oficiais & Falhas nos Menus):**
   - Opacidade reduzida do piscamento (`0.01`–`0.085`) para manter o clima temático de fogo sem atrapalhar a leitura das mensagens.
@@ -51,4 +59,4 @@ npm test
 npm run pack:all
 ```
 
-> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.5 (`3.5.0`).
+> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.6 (`3.6.0`).
