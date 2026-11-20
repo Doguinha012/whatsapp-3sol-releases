@@ -2,11 +2,11 @@
 
 <img src="assets/logo.gif" alt="WhatsApp 3 Sol Logo" width="128" />
 
-# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.4
+# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.5
 
 **Aplicativo desktop multi-contas para Windows baseado no WhatsApp Web, com sessões isoladas, privacidade granular, fixação ilimitada de conversas, transcrição 100% offline, equalizador e efeitos de voz ao vivo.**
 
-[![Version](https://img.shields.io/badge/versão-3.4.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
+[![Version](https://img.shields.io/badge/versão-3.5.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
 [![Platform](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows)](#)
 [![Clematis](https://img.shields.io/badge/Clematis_Player-GitHub-6366f1?style=for-the-badge)](https://github.com/Doguinha012/Clematis-Player)
 
@@ -14,7 +14,20 @@
 
 ---
 
-## 🔥 Correções Urgentes & Novidades da Versão 3.4 (`v3.4.0`)
+## 🔥 Novidades & Melhorias da Versão 3.5 (`v3.5.0`)
+
+- **☀️ Evento Bad Sun Aprimorado (Flicker Suave, Áudios Oficiais & Falhas nos Menus):**
+  - Opacidade reduzida do piscamento (`0.01`–`0.085`) para manter o clima temático de fogo sem atrapalhar a leitura das mensagens.
+  - No **dia 24**, ao abrir o WhatsApp 3 Sol pela primeira vez com o evento ativo, toca automaticamente o alarme **Siren** (1 vez naquele dia, até finalizar) junto com **Meta Paranoia** em loop contínuo enquanto o tema estiver ativo.
+  - **Textos de Menu com Falhas Proporcionais:** ~12 palavras aleatórias nos menus da interface piscam rapidamente trocando letras proporcionalmente (`olá` → 1 letra, palavras longas → 3–5 letras) mantendo a legibilidade, com esticamento, ampliação, preto e inversão de cor, restaurando tudo ao desativar o efeito.
+- **🔔 Notificações Clicáveis Direto na Conversa:**
+  - Retenção segura das instâncias de `Notification` no Windows + parsing inteligente de títulos de grupos, contatos, contadores `(N)` e `tag` JID, restaurando/focando a janela, trocando para a conta correta e abrindo exatamente a conversa da notificação clicada.
+- **🎞️ Exportação de GIF em Alta Qualidade:**
+  - Nova quantização adaptativa de paleta por **Median-Cut (255 cores por arquivo)** com dithering ordenado **Bayer 4×4** e resolução elevada para até **480px**, eliminando granulados e faixas de cor ao baixar GIFs e figurinhas animadas.
+
+---
+
+## 🔥 Destaques Anteriores (v3.4)
 
 - **☀️ Correção Completa do Bad Sun (Layout & Flicker de Fogo):**
   - Movido o filtro de cor para `#app` e ancorado o quadrado de censura como camada `position: fixed` diretamente em `document.body` apenas quando uma conversa está aberta (`#main`). Isso elimina totalmente os deslocamentos para cima ao reiniciar, atualizar abas ou abrir Status/Comunidades, e o quadrado nunca cresce nem sai da posição.
@@ -38,4 +51,4 @@ npm test
 npm run pack:all
 ```
 
-> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.4 (`3.4.0`).
+> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.5 (`3.5.0`).
