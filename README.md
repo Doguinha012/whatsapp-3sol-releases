@@ -2,11 +2,11 @@
 
 <img src="assets/logo.gif" alt="WhatsApp 3 Sol Logo" width="128" />
 
-# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.6
+# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.67
 
 **Aplicativo desktop multi-contas para Windows baseado no WhatsApp Web, com sessões isoladas, privacidade granular, fixação ilimitada de conversas, transcrição 100% offline, equalizador e efeitos de voz ao vivo.**
 
-[![Version](https://img.shields.io/badge/versão-3.6.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
+[![Version](https://img.shields.io/badge/versão-3.6.7-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
 [![Platform](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows)](#)
 [![Clematis](https://img.shields.io/badge/Clematis_Player-GitHub-6366f1?style=for-the-badge)](https://github.com/Doguinha012/Clematis-Player)
 
@@ -14,7 +14,16 @@
 
 ---
 
-## 🛠️ Correção da Versão 3.6 (`v3.6.0`)
+## 🛠️ Correção Definitiva de Figurinhas da Versão 3.67 (`v3.6.7`)
+
+- **🖼️ Fim das Falhas com Botão de Download em Figurinhas Maiores:**
+  - Desativado `HTTP/3 QUIC` (`--disable-quic`) para que downloads de figurinhas animadas em `mmg.whatsapp.net` / `*.fna.whatsapp.net` trafeguem exclusivamente em **HTTP/2 TLS** estável sem quedas UDP.
+  - Removido o `preconnect` agressivo na inicialização (`mmg.whatsapp.net` / `web.whatsapp.com` + 8 sockets de previews), passando a aquecer apenas **1 socket por host do YouTube/Spotify após o carregamento do WhatsApp Web (`did-finish-load`)**, preservando miniaturas rápidas de links sem conflitar com o pool de figurinhas.
+  - Limpeza única do cache HTTP corrompido de versões anteriores (`ses.clearCache()` sem afetar login/conversas) e retry automático seguro para requisições `fetch` de mídia CDN do WhatsApp em quedas transitórias.
+
+---
+
+## 🛠️ Correções Anteriores (v3.6 / v3.5) (`v3.6.0`)
 
 - **🖼️ Correção do Carregamento de Figurinhas nos Chats:**
   - Corrigida a rotina `triggerAvatarAndImageRecovery()` ao focar/redimensionar/restaurar a janela para **nunca resetar URLs `blob:`** nem imagens/figurinhas em carregamento dentro dos chats (`#main [data-testid="msg-container"]`).
@@ -59,4 +68,4 @@ npm test
 npm run pack:all
 ```
 
-> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.6 (`3.6.0`).
+> Desenvolvido por **Douglas da Cunha Zanetti (Doguinha)** — Versão 3.67 (`3.6.7`).
