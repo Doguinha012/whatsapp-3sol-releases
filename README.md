@@ -2,11 +2,11 @@
 
 <img src="assets/logo.gif" alt="WhatsApp 3 Sol Logo" width="128" />
 
-# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.7
+# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.7.1
 
 **Aplicativo desktop multi-contas para Windows baseado no WhatsApp Web, com sessões isoladas, privacidade granular, fixação ilimitada de conversas, transcrição 100% offline, equalizador e efeitos de voz ao vivo.**
 
-[![Version](https://img.shields.io/badge/versão-3.7.0-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
+[![Version](https://img.shields.io/badge/versão-3.7.1-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
 [![Platform](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows)](#)
 [![Clematis](https://img.shields.io/badge/Clematis_Player-GitHub-6366f1?style=for-the-badge)](https://github.com/Doguinha012/Clematis-Player)
 
@@ -14,7 +14,18 @@
 
 ---
 
-## 🛠️ Correção Definitiva de Figurinhas & Miniaturas do YouTube da Versão 3.7 (`v3.7.0`)
+## 🛠️ Correção Definitiva de Figurinhas & Miniaturas do YouTube da Versão 3.7.1 (`v3.7.1`)
+
+- **🕵️ Causa-Raiz Descoberta para Figurinhas com Falha de Download (HTTP 400 `invalid-header`):**
+  - O nome de exibição `WhatsApp 3 Sol Finally Tests Versão 3.7` (caractere não-ASCII `ã` em **`Versão`**) fazia o Electron gerar `app.userAgentFallback` contendo `WhatsApp3SolFinallyTestsVersão3.x/34.5.8`. Service Workers e Web Workers do WhatsApp Web usavam esse fallback em downloads CDN `.enc`, recebendo **`HTTP 400 invalid-header`** dos proxies da Meta.
+  - Definido `app.userAgentFallback = getChromeUserAgent()` antes de `app.whenReady()` e adicionado `enforceAsciiUserAgentOnSession()` em todas as sessões (`defaultSession`, contas e IA) para garantir cabeçalho `User-Agent` 100% ASCII do Chrome em janelas, Service Workers e Web Workers.
+- **⚡ Acelerador & Recuperação de Miniaturas de Links (YouTube, Spotify e Externos):**
+  - O `WAWebLinkPreviewChatAction.getLinkPreview` aguardava até 9–10s pelo celular principal e caía no card vazio (`www.youtube.com`) quando o aparelho demorava a responder.
+  - Agora, após `900ms` sem resposta rica do celular (ou em fallback mínimo), o preload aciona em paralelo `WAWebMexFetchPlaintextLinkPreviewJob.mexFetchPlaintextLinkPreview` para entregar título, descrição e miniatura HD instantaneamente sem afetar figurinhas.
+
+---
+
+## 🛠️ Correção de Hook CDN & Preconnect da Versão 3.7 (`v3.7.0`)
 
 - **🖼️ Correção do Hook `fetch` + Retry Real para Mídia CDN & Previews:**
   - Corrigido o erro de sintaxe no template literal do interceptor `window.fetch` em `whatsappPreload.ts` (que impedia a execução do retry automático de mídia e do hook de clipboard em `v3.67`), agora validado por AST em teste unitário (`vm.Script`).
