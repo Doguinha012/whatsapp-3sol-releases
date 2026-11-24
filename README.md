@@ -2,15 +2,26 @@
 
 <img src="assets/logo.gif" alt="WhatsApp 3 Sol Logo" width="128" />
 
-# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.7.1
+# ☀️ WhatsApp 3 Sol — Finally Tests Versão 3.7.2
 
 **Aplicativo desktop multi-contas para Windows baseado no WhatsApp Web, com sessões isoladas, privacidade granular, fixação ilimitada de conversas, transcrição 100% offline, equalizador e efeitos de voz ao vivo.**
 
-[![Version](https://img.shields.io/badge/versão-3.7.1-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
+[![Version](https://img.shields.io/badge/versão-3.7.2-f97316?style=for-the-badge)](https://github.com/Doguinha012/whatsapp-3sol-releases/releases)
 [![Platform](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows)](#)
 [![Clematis](https://img.shields.io/badge/Clematis_Player-GitHub-6366f1?style=for-the-badge)](https://github.com/Doguinha012/Clematis-Player)
 
 </div>
+
+---
+
+## ☀️ Atualização Especial Bad Sun & Imersão *Voices of the Void* (`v3.7.2`)
+
+- **🌌 Paralaxe em Camadas no Chat + Censura Travada com o Sol:** Fundo, silhuetas e Sol agora reagem com profundidades diferentes ao movimento do mouse, mantendo a censura pixel a pixel alinhada ao Sol e acima de todas as camadas (`z-index: 999999`).
+- **🔤 Glitch de Textos dentro do WhatsApp Web:** Efeito proporcional de troca rápida e deformação visual de caracteres estendido também às conversas, contatos e menus do WhatsApp Web (preservando a caixa de digitação).
+- **🔊 Segurança de Áudio ao Abrir Tampa / Reiniciar & Reverb Geral:**
+  - `Meta Paranoia` (loop) e `Sirene` (1× por abertura do app no dia 24) recuperam automaticamente via `powerMonitor` (`resume`/`unlock-screen`), `focus` e watchdog de suspensão.
+  - Reverb de bunker aplicado a áudios do WhatsApp (`<audio>`/`<video>`), notificações (`votv_email.ogg` obrigatório no Bad Sun), cliques em chaves/botões (`votv_flashlight.ogg`) e efeitos especiais VotV (`pcStartup`/`pcShutdown`, `turnon`/`turnoff`) — mantendo Meta Paranoia e Sirene sem reverb.
+- **🔒 Trava do Dia 24 & Easter Egg `powerDown`:** No dia 24 não é possível desligar o evento (a chave retorna sozinha); abrir os contatos `+55 27 99612-7513` ou `+55 27 99759-1059` (sob qualquer nome) dispara o som `powerDown`.
 
 ---
 
